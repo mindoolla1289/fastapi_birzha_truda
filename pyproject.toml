@@ -12,6 +12,7 @@ uvicorn = "^0.17.6"
 SQLAlchemy = "^1.4.36"
 databases = {extras = ["postgresql"], version = "^0.5.5"}
 psycopg2-binary = "^2.9.3"
+passlib = "^1.7.4"
 
 [tool.poetry.dev-dependencies]
 
