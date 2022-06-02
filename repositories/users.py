@@ -23,7 +23,6 @@ class UserRepository(BaseRepository):
         user = User(
             name= u.name,
             email=u.email,
-            name=u.name,
             hashed_password=hash_password(u.password),
             is_company=u.is_company,
             created_at=datetime.datetime.utcnow(),
@@ -43,7 +42,6 @@ class UserRepository(BaseRepository):
             id=id,
             name= u.name,
             email=u.email,
-            name=u.name,
             hashed_password=hash_password(u.password),
             is_company=u.is_company,
             created_at=datetime.datetime.utcnow(),
