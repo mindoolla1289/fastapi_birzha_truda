@@ -5,7 +5,7 @@ import datetime
 
 
 class User(BaseModel):
-    id: Optional(str) = None
+    id: Optional[str] = None
     name: str
     email: EmailStr
     hashed_passwoed: str 
