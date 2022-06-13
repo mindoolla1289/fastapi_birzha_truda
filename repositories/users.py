@@ -19,7 +19,7 @@ class UserRepository(BaseRepository):
             return None
         return User.parse_obj(user)
     
-    async def creat(self, u:UserIn) -> User:
+    async def create(self, u:UserIn) -> User:
         user = User(
             name= u.name,
             email=u.email,
@@ -31,7 +31,6 @@ class UserRepository(BaseRepository):
 
         values = {**user.dict()}
         values.pop("id",None)
-        
         query = users.insert().values(**values)
         user.id = await self.darabase.execute(query)
         
@@ -39,7 +38,6 @@ class UserRepository(BaseRepository):
     
     async def update(self, u:UserIn) -> User:
         user = User(
-            id=id,
             name= u.name,
             email=u.email,
             hashed_password=hash_password(u.password),
