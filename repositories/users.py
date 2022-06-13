@@ -36,8 +36,9 @@ class UserRepository(BaseRepository):
         
         return user 
     
-    async def update(self, u:UserIn) -> User:
+    async def update(self, id:int, u:UserIn) -> User:
         user = User(
+            id=id,
             name= u.name,
             email=u.email,
             hashed_password=hash_password(u.password),
